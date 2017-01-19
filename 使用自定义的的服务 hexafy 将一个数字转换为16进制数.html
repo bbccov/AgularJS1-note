@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用自定义的的服务 hexafy 将一个数字转换为16进制数: AngularJS测试</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+<p>
+	{{hex}}
+</p>
+</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.service('hexafy', function() {
+	    this.myFunc = function (x) {
+	        return x.toString(16);
+	    }
+	});
+	app.controller('customersCtrl', function($scope, hexafy) {
+		$scope.hex = hexafy.myFunc(255);
+	});
+</script>
+</html>

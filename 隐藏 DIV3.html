@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐藏 DIV angularjs测试</title>
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="JS/angular.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular-animate.min.js"></script>
+	<style>
+	div {
+	    transition: all linear 0.5s;
+	    background-color: lightblue;
+	    height: 100px;
+	}
+	.ng-hide {
+	    height: 0;
+	}
+	</style>
+</head>
+<body ng-app="myApp">
+<h1>隐藏 DIV: <input type="checkbox" ng-model="myCheck"></h1>
+<div ng-hide="myCheck" ></div>
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+</script>
+</body>
+</html>

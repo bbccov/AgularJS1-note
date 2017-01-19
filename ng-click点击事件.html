@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ng-click点击事件 AngularJS测试</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+	<button ng-click="count = count + 1">点我！</button>
+	<p>{{ count }}</p>
+	</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+	    $scope.count = 0;
+	});
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成数据源为对象下拉列表 AngularJS测试</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<!-- 使用ng-options 创建下拉列表 -->
+<select ng-model="selectedSite" ng-options="x for (x, y) in sites">
+</select>
+<h1>你选择的值是: {{selectedSite}}</h1>
+</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+			$scope.sites = {
+			    site01 : "Google",
+			    site02 : "Runoob",
+			    site03 : "Taobao"
+			};
+	});
+</script>
+</html>

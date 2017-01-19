@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用 $http 服务向服务器请求数据 AngularJS测试</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+<p>
+	{{myWelcome}}
+</p>
+</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('customersCtrl', function($scope, $http) {
+		$http.get("http://localhost/test/1.php").then(function(response) {
+			$scope.myWelcome= response.data;
+			console.log(response);
+		});
+	});
+</script>
+</html>

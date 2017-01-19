@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成下拉列表两种方式对比 AngularJS测试</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<!-- 使用ng-options 创建下拉列表 -->
+<select ng-model="selectedSite" ng-options="x.site for x in sites">
+</select>
+<h1>你选择的是: {{selectedSite.site}}</h1>
+<p>网址为: {{selectedSite.url}}</p>
+
+<!-- 使用ng-repeat创建下拉列表 -->
+<select ng-model="selectedSite1">
+<option ng-repeat="x in sites" value="{{x.url}}">{{x.site}}</option>
+</select>
+
+<h1>你选择的是: {{selectedSite1}}</h1>
+</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+			$scope.sites = [
+			    {site : "Google", url : "http://www.google.com"},
+			    {site : "Runoob", url : "http://www.runoob.com"},
+			    {site : "Taobao", url : "http://www.taobao.com"}
+			];
+	});
+</script>
+</html>
+

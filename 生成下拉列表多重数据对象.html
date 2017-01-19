@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生成下拉列表多重数据对象 AngularJS测试</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="myCtrl">
+<select ng-model="selectedCar" ng-options="y.brand for (x, y) in cars">
+</select>
+<h3>新选择的是{{ selectedCar.brand+' '+ selectedCar.model+' '+selectedCar.color }}</h3>
+</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.controller('myCtrl', function($scope) {
+			$scope.cars = {
+			car01 : {brand : "Ford", model : "Mustang", color : "red"},
+			car02 : {brand : "Fiat", model : "500", color : "white"},
+			car03 : {brand : "Volvo", model : "XC90", color : "black"}
+			};
+	});
+</script>
+</html>

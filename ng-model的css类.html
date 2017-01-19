@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS测试</title>
+</head>
+<style>
+input.ng-invalid{
+	background-color:lightblue;	
+}
+</style>
+<body>
+<form ng-app="" name="myForm">
+	<p>输入你的名字: <input ng-model="text" name="myAddress" required></p>
+	<p>
+		ng-model 指令根据表单域的状态添加/移除以下类：ng-empty,ng-not-empty,ng-touched,ng-untouched,ng-validng-invalid,ng-dirty,ng-pending,ng-pristine
+	</p>	
+</form>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	
+</script>
+</html>

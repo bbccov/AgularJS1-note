@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>全局API angularjs测试</title>
+</head>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+	<p>元数据：{{ x1 }}</p>
+	<p>转小写：{{ x2 }}</p>
+	<p>转大写：{{ x3 }}</p>
+	<p>是字符：{{ x4 }}</p>
+	<p>是数字：{{ x5 }}</p>
+	</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+$scope.x1 = "John";
+$scope.x2 = angular.lowercase($scope.x1);
+$scope.x3 = angular.uppercase($scope.x1);
+$scope.x4 = angular.isString($scope.x1);
+$scope.x5 = angular.isNumber($scope.x1);
+});
+</script>
+</html>

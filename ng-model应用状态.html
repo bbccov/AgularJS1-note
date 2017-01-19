@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>AngularJS测试</title>
+</head>
+<body>
+<form ng-app="" name="myForm">
+	<p>Email: <input type="email" ng-model="text" name="myAddress"></p>
+	<span ng-show="myForm.myAddress.$error.email">非法邮箱地址！</span>
+	{{ myForm.myAddress.$valid }}
+	{{ myForm.myAddress.$dirty }}
+	{{ myForm.myAddress.$touched }}
+	{{ myForm.myAddress.$error }}
+</form>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	
+</script>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>过滤器中使用自定义的的服务将一个数字转换为16进制数: AngularJS测试</title>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="customersCtrl">
+<p>	{{hex}} </p>
+<p>	{{hex | myFormat }} </p>
+</div>
+</body>
+<script src="JS/angular.min.js"></script>
+<script>
+	var app = angular.module('myApp', []);
+	app.service('hexafy', function() {
+	    this.myFunc = function (x) {
+	        return x.toString(16);
+	    }
+	});
+	app.filter('myFormat',['hexafy', function(hexafy) {
+	    return function(x) {
+	        return hexafy.myFunc(x);
+	    };
+	}]);
+	app.controller('customersCtrl', function($scope, hexafy) {
+		$scope.hex = 255;
+	});
+</script>
+</html>
